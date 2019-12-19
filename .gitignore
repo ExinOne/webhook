@@ -10,7 +10,6 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-.env
 .DS_Store
 *.7z
 *.tar.gz
@@ -26,4 +25,6 @@ nohup\.out
 
 .env
 .env.backup
+.env.beta
+.env.release
 .phpunit.result.cache
