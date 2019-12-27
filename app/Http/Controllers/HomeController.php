@@ -112,6 +112,8 @@ class HomeController extends Controller
             return $this->error(10002);
         }
 
+        $item->increment('count');
+
         return $this->success($response);
     }
 }
