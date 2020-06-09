@@ -23,7 +23,9 @@ Webhook 是一个基于 [Mixin Messenger](https://mixin.one) 的消息回调服�
 示例代码：
 
 ```
-curl https://webhook.exinwork.com/api/send?access_token=YOUR_ACCESS_TOKEN -XPOST -H 'Content-Type: application/json' -d '{"category":"PLAIN_TEXT","data":"Hello World!"}'
+curl https://webhook.exinwork.com/api/send?access_token=YOUR_ACCESS_TOKEN \
+-XPOST -H 'Content-Type: application/json' \
+-d '{"category":"PLAIN_TEXT","data":"Hello World!"}'
 ```
 
 您可以在 [Webhook Samples](https://github.com/ExinOne/webhook-samples) 查看示例代码，支持 Go、PHP、Python 和 Shell。

@@ -23,7 +23,9 @@ Invite Webhook and somebody who want to receive message to a group in Mixin Mess
 Example:
 
 ```
-curl https://webhook.exinwork.com/api/send?access_token=YOUR_ACCESS_TOKEN -XPOST -H 'Content-Type: application/json' -d '{"category":"PLAIN_TEXT","data":"Hello World!"}'
+curl https://webhook.exinwork.com/api/send?access_token=YOUR_ACCESS_TOKEN \
+-XPOST -H 'Content-Type: application/json' \
+-d '{"category":"PLAIN_TEXT","data":"Hello World!"}'
 ```
 
 You can check the sample code in [Webhook Samples](https://github.com/ExinOne/webhook-samples), which support Go, PHP, Python and Shell.
