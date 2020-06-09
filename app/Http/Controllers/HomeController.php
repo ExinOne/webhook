@@ -141,10 +141,10 @@ class HomeController extends Controller
 
         $commits = request('commits', []);
 
-        $content = "❤️{$repository_full_name}\n\n{$ref}\n👨‍💻{$pusher_name}\n";
+        $content = "❤️❤️{$repository_full_name}\n\n{$ref}\n👨‍💻{$pusher_name}\n\n";
 
         foreach ($commits as $commit) {
-            $content .= "{$commit}\n";
+            $content .= "- {$commit['message']}\n";
         }
 
         $content .= "\n{$compare}";
