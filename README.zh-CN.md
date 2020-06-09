@@ -5,7 +5,7 @@
 
 ## Webhook
 
-**Webhook** 是一个基于 [Mixin Messenger](https://mixin.one) 的消息回调服务。您可以将 Webhook 应用在任何您想转发消息到 Mixin Messenger 的服务上。Webhook 目前支持以下的消息类型：`PLAIN_TEXT`、`PLAIN_CONTACT`、`APP_BUTTON_GROUP` 和 `APP_CARD`。您可以在 [Mixin Developer](https://developers.mixin.one/api/beta-mixin-message/websocket-messages/) 中查看 **Websocket Messages** 的详细信息。
+**Webhook** 是一个基于 [Mixin Messenger](https://mixin.one) 的消息回调服务。您可以将 Webhook 应用在任何您想转发消息到 Mixin Messenger 的服务上。Webhook 目前支持以下的消息类型：`PLAIN_TEXT`、`PLAIN_CONTACT`、`APP_BUTTON_GROUP` 和 `APP_CARD`。您可以在 [Mixin Developer](https://developers.mixin.one/api/beta-mixin-message/websocket-messages/) 中查看 **Websocket Messages** 的详细信息。除此之外，Webhook 还支持 GitHub Push 事件。
 
 ## 优势
 
@@ -15,6 +15,8 @@
 * **开源**：Webhook 开源，您可以使用源代码构建属于自己的服务。
 
 ## 使用
+
+### 基本使用
 
 在 [Mixin Messenger](https://mixin.one/messenger) 搜索 `7000000012`，然后添加 **[Webhook](https://mixin.one/codes/4d792128-1db8-4baf-8d90-d0d8189a4a7e)** 为联系人。
 
@@ -29,6 +31,16 @@ $ curl https://webhook.exinwork.com/api/send?access_token=YOUR_ACCESS_TOKEN \
 ```
 
 您可以在 [Webhook Samples](https://github.com/ExinOne/webhook-samples) 查看示例代码，支持 Go、PHP、Python 和 Shell。
+
+### GitHub
+
+Webhook 支持 GitHub Push 事件，您可以在 GitHub 仓库中设置。
+
+GitHub Webhook URL：
+
+``` bash
+https://webhook.exinwork.com/api/github?access_token=YOUR_ACCESS_TOKEN
+```
 
 ## 联系我们
 

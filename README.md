@@ -5,7 +5,7 @@
 
 ## Webhook
 
-**Webhook** is a message callback service based on [Mixin Messenger](https://mixin.one). You can apply Webhook to any service that you want to forward messages to Mixin Messenger. Webhook currently support the following websocket messages types: `PLAIN_TEXT`, `PLAIN_CONTACT`, `APP_BUTTON_GROUP` and `APP_CARD`. You can check the details of **Websocket Messages** in [Mixin Developer](https://developers.mixin.one/api/beta-mixin-message/websocket-messages/).
+**Webhook** is a message callback service based on [Mixin Messenger](https://mixin.one). You can apply Webhook to any service that you want to forward messages to Mixin Messenger. Webhook currently support the following websocket messages types: `PLAIN_TEXT`, `PLAIN_CONTACT`, `APP_BUTTON_GROUP` and `APP_CARD`. You can check the details of **Websocket Messages** in [Mixin Developer](https://developers.mixin.one/api/beta-mixin-message/websocket-messages/). In addition, Webhook also supports GitHub Push events.
 
 ## Features
 
@@ -15,6 +15,8 @@
 - **Open source**: Webhook is open source , you can use the source code to build your own services.
 
 ## Usage
+
+### Basic Usage
 
 Search `7000000012` in [Mixin Messenger](https://mixin.one/messenger) and add **[Webhook](https://mixin.one/codes/4d792128-1db8-4baf-8d90-d0d8189a4a7e)** as contact.
 
@@ -29,6 +31,16 @@ $ curl https://webhook.exinwork.com/api/send?access_token=YOUR_ACCESS_TOKEN \
 ```
 
 You can check the sample code in [Webhook Samples](https://github.com/ExinOne/webhook-samples), which support Go, PHP, Python and Shell.
+
+### GitHub
+
+Webhook supports GitHub Push events, which you can set up in your GitHub repository.
+
+GitHub Webhook URL:
+
+``` bash
+https://webhook.exinwork.com/api/github?access_token=YOUR_ACCESS_TOKEN
+```
 
 ## Contact
 
