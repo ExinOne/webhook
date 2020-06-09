@@ -33,7 +33,7 @@
             </div>
             <div class="row justify-content-center mt-3">
                 <div class="col-md-8">
-                    <div class="card border-danger">
+                    <div class="card border-primary">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
