@@ -116,4 +116,49 @@ class HomeController extends Controller
 
         return $this->success($response);
     }
+
+    // Github ony push event
+    public function github()
+    {
+        $access_token = request('access_token', null);
+        if (! $access_token) {
+            return $this->error(401);
+        }
+
+        $item = WebhookItem::where('access_token', $access_token)->first();
+        if (! $item) {
+            return $this->error(401);
+        }
+
+        $repository_full_name = request('repository.full_name', null);
+        $ref                  = request('ref', null);
+        $pusher_name          = request('pusher.name', null);
+        $compare              = request('compare', null);
+
+        if (! $repository_full_name || ! $ref || ! $pusher_name || ! $compare) {
+            return $this->error(400);
+        }
+
+        $commits = request('commits', []);
+
+        $content = "❤️{$repository_full_name}\n\n{$ref}\n👨‍💻{$pusher_name}\n";
+
+        foreach ($commits as $commit) {
+            $content .= "{$commit}\n";
+        }
+
+        $content .= "\n{$compare}";
+
+        try {
+            $response = MixinSDK::message()->setRaw(true)->sendText('', $content, '', $item->conversation_id);
+        } catch (\Exception $e) {
+            app('log')->error('消息发送失败：'.$e->getMessage());
+
+            return $this->error(10002);
+        }
+
+        $item->increment('count');
+
+        return $this->success($response);
+    }
 }
