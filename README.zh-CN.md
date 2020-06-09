@@ -5,7 +5,7 @@
 
 ## Webhook
 
-Webhook 是一个基于 [Mixin Messenger](https://mixin.one) 的消息回调服务。您可以将 Webhook 应用在任何您想转发消息到 Mixin Messenger 的服务上。Webhook 目前支持以下的消息类型：`PLAIN_TEXT`、`PLAIN_CONTACT`、`APP_BUTTON_GROUP` 和 `APP_CARD`。您可以在 [Mixin Developer](https://developers.mixin.one/api/beta-mixin-message/websocket-messages/) 中查看 **Websocket Messages** 的详细信息。
+**Webhook** 是一个基于 [Mixin Messenger](https://mixin.one) 的消息回调服务。您可以将 Webhook 应用在任何您想转发消息到 Mixin Messenger 的服务上。Webhook 目前支持以下的消息类型：`PLAIN_TEXT`、`PLAIN_CONTACT`、`APP_BUTTON_GROUP` 和 `APP_CARD`。您可以在 [Mixin Developer](https://developers.mixin.one/api/beta-mixin-message/websocket-messages/) 中查看 **Websocket Messages** 的详细信息。
 
 ## 优势
 
