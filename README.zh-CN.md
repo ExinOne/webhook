@@ -1,4 +1,4 @@
-<p align="center"><img src="./logos/webhook.png" width="300"></p>
+<p align="center"><img src="./logos/webhook.png" width="200"></p>
 <p align="center">
 <a href="README.md"><img src="https://img.shields.io/badge/language-English-red.svg?longCache=true&style=flat-square"></a>
 </p>
