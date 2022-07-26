@@ -161,4 +161,36 @@ class HomeController extends Controller
 
         return $this->success($response);
     }
+
+    public function sendText()
+    {
+        $access_token = request('access_token', null);
+        if (! $access_token) {
+            return $this->error(401);
+        }
+
+        $item = WebhookItem::where('access_token', $access_token)->first();
+        if (! $item) {
+            return $this->error(401);
+        }
+
+        $data = request()->except('access_token');
+        if (empty($data)) {
+            return $this->error(400);
+        }
+
+        $data = json_encode($data, JSON_PRETTY_PRINT);
+
+        try {
+            $response = MixinSDK::message()->setRaw(true)->sendText('', $data, '', $item->conversation_id);
+        } catch (\Exception $e) {
+            app('log')->error('消息发送失败：'.$e->getMessage());
+
+            return $this->error(10002);
+        }
+
+        $item->increment('count');
+
+        return $this->success($response);
+    }
 }

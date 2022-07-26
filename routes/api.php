@@ -19,3 +19,4 @@ use Illuminate\Http\Request;
 
 Route::post('/send', 'HomeController@send')->name('send');
 Route::post('/github', 'HomeController@github')->name('github');
+Route::post('/send_text', 'HomeController@sendText')->name('send_text');
