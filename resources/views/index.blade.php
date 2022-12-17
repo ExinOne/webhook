@@ -74,7 +74,7 @@
                                     <li><code>category</code> 为 Mixin 消息类型，<code>data</code> 是消息内容，具体参考 <a href="https://developers.mixin.one/api/beta-mixin-message/websocket-messages/">Mixin 文档</a></li>
                                     <li>目前支持类型 <code>PLAIN_TEXT</code>、<code>PLAIN_CONTACT</code>、<code>APP_BUTTON_GROUP</code>、<code>APP_CARD</code>，完善后所有类型都会支持</li>
                                     <li>Webhook 机器人只做转发，不保存消息，消息发送结果同步返回，请自行验证状态</li>
-                                    <li>Github 目前只支持 <code>Push</code> 事件</li>
+                                    <li>Github 目前只支持 <code>Push</code> 事件，设置 GitHub Web 时请注意 Content type 选择 <code>application/json</code>。 </li>
                                     <li>机器人不保存任何消息的，没有安全问题</li>
                                     <li>代码已开源：https://github.com/ExinOne/webhook</li>
                                 </ul>
