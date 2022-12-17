@@ -5,7 +5,7 @@
 
 ## Webhook
 
-**Webhook** is a message callback service based on [Mixin Messenger](https://mixin.one). You can apply Webhook to any service that you want to forward messages to Mixin Messenger. Webhook currently support the following websocket messages types: `PLAIN_TEXT`, `PLAIN_CONTACT`, `APP_BUTTON_GROUP` and `APP_CARD`. You can check the details of **Websocket Messages** in [Mixin Developer](https://developers.mixin.one/api/beta-mixin-message/websocket-messages/). In addition, Webhook also supports GitHub Push events.
+**Webhook** is a message callback service based on [Mixin Messenger](https://mixin.one). You can apply Webhook to any service that you want to forward messages to Mixin Messenger. Webhook currently support the following websocket messages types: `PLAIN_TEXT`, `PLAIN_CONTACT`, `PLAIN_POST`, `APP_BUTTON_GROUP` and `APP_CARD`. You can check the details of **Websocket Messages** in [Mixin Developer](https://developers.mixin.one/api/beta-mixin-message/websocket-messages/). In addition, Webhook also supports GitHub Push events.
 
 ## Features
 
