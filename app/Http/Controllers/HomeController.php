@@ -15,6 +15,19 @@ class HomeController extends Controller
 
         $user = Auth::user();
 
+        // $res = MixinSDK::network()->createConversations(
+        //     'CONTACT',
+        //     [
+        //         [
+        //             'action'  => 'ADD',
+        //             'role'    => '',
+        //             'user_id' => "fef77640-e148-4096-a3f9-2b398fecfc1e",
+        //         ],
+        //     ]
+        // );
+
+        // dd($res);
+
         $access = false;
 
         if (! empty($conversation_id)) {
@@ -80,7 +93,7 @@ class HomeController extends Controller
         }
 
         $category = request('category', null);
-        if (! in_array($category, ['PLAIN_TEXT', 'PLAIN_CONTACT', 'APP_BUTTON_GROUP', 'APP_CARD'])) {
+        if (! in_array($category, ['PLAIN_TEXT', 'PLAIN_CONTACT', 'APP_BUTTON_GROUP', 'APP_CARD', 'PLAIN_POST'])) {
             return $this->error(10001);
         }
 
@@ -89,9 +102,14 @@ class HomeController extends Controller
             return $this->error(400);
         }
 
+        $data = is_array($data) ? json_encode($data) : $data;
+
         switch ($category) {
             case 'PLAIN_TEXT':
                 $method = 'sendText';
+                break;
+            case 'PLAIN_POST':
+                $method = 'sendPost';
                 break;
             case 'PLAIN_CONTACT':
                 $method = 'sendContact';
@@ -106,6 +124,9 @@ class HomeController extends Controller
 
         try {
             $response = MixinSDK::message()->setRaw(true)->$method('', $data, '', $item->conversation_id);
+
+            // $response = MixinSDK::message()->sendBatchMessage([], $data, true, "PLAIN_TEXT", $item->conversation_id);
+
         } catch (\Exception $e) {
             app('log')->error('消息发送失败：'.$e->getMessage());
 
